@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PointtaskApplication {
+public class PointTaskApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PointtaskApplication.class, args);
+        SpringApplication.run(PointTaskApplication.class, args);
     }
 
 }
