@@ -1,13 +1,13 @@
 package pl.fox.pointtask.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
 @Table(name = "account")
+@Entity
 public class Account {
 
     @Id
@@ -18,7 +18,10 @@ public class Account {
     private String surname;
     private String username;
     private String email;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
     private Date birthDate;
+
     private String nationality;
     private int role; //0 - user, 1 - admin
 
