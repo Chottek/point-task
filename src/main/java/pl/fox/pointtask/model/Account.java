@@ -10,6 +10,19 @@ import java.util.Objects;
 @Entity
 public class Account {
 
+    public Account(Long id, String name, String surname, String username, String email, Date birthDate, String nationality, int role) {
+        this.id = id;
+        this.name = name;
+        this.surname = surname;
+        this.username = username;
+        this.email = email;
+        this.birthDate = birthDate;
+        this.nationality = nationality;
+        this.role = role;
+    }
+
+    public Account() { }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -108,7 +121,7 @@ public class Account {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Account account = (Account) o;
-        return id == account.id &&
+        return id.equals(account.id) &&
                 role == account.role &&
                 Objects.equals(name, account.name) &&
                 Objects.equals(surname, account.surname) &&

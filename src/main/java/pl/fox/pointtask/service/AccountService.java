@@ -15,7 +15,7 @@ public class AccountService {
 
     private static final Logger LOG = LoggerFactory.getLogger(AccountService.class);
 
-    private AccountRepository repository;
+    private final AccountRepository repository;
 
     @Autowired
     public AccountService(AccountRepository repository) {
@@ -23,7 +23,7 @@ public class AccountService {
     }
 
     public void saveAccount(Account a){
-        //repository.save(a);
+        repository.save(a);
         LOG.info("Saved {}", a.toString());
     }
 
